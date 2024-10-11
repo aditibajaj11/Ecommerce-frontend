@@ -9,10 +9,10 @@ export default function useCategory() {
   // Get categories
   const getCategories = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/v1/category/get-category");
+      const { data } = await axios.get("https://ecommerce-backend-enap.onrender.com/api/v1/category/get-category");
       console.log(data); // Log the response for debugging
       if (data?.success) {
-        setCategories(data.categories); // Use 'categories' instead of 'category'
+        setCategories(data.categories); 
       } else {
         setError("Failed to fetch categories.");
       }
@@ -28,7 +28,7 @@ export default function useCategory() {
     getCategories();
   }, []);
 
-  return { categories, loading, error }; // Return loading and error states
+  return { categories, loading, error };
 }
 
 
